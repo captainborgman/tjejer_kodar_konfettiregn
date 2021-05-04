@@ -8,8 +8,20 @@
 // partiklar ha samma färg men om den returnerar olika färger
 // t.ex. baserat på slump eller baserat på inparametern groupName
 // så kan det istället bli en blandning av färger.
-const chooseParticleColor = (groupName) => {
-  return 'gray'
+const chooseParticleColor = (color) => {
+  console.log (color);
+  if (color == 0) {
+    return '#fddb73'
+  } else if (color == 1) {
+    return '#b6e7ff';
+  } else if (color == 2) {
+    return '#81d898';
+  } else if (color == 3) {
+    return '#f97f99';
+  } else {
+    return '#71a2f6';
+  }
+  
 }
 
 
@@ -26,7 +38,7 @@ const bang = (addConfettiParticles) => {
   // sprider ut sig från varandra samt ett gruppnamn som skickas in i
   // chooseParticleColor. Ändra på dessa värden och se vad som händer!
   addConfettiParticles({
-    groupName: 'lonely sad confetti',  // Valfritt namn på gruppen
+    groupName: getRandomInt(5),  // Valfritt namn på gruppen
     particleAmount: 1,  // Antal konfettipartiklar
     xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
     yPosition: 50,      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
@@ -35,6 +47,11 @@ const bang = (addConfettiParticles) => {
     xSpread: 80,        // Slumpmässig spridning på partikelns hastighet i sidled
     ySpread: 20         // Slumpmässig spridning på partikelns hastighet i höjdled
   })
+}
+
+/* Generate a random numer */
+const getRandomInt = (max) => {
+ return Math.floor(Math.random() * max);
 }
 
 // Här exporterar vi funktionerna så att de kan användas i
