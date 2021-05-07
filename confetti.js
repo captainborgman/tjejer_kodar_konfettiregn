@@ -29,6 +29,7 @@ const chooseParticleColor = (color) => {
 // eller flera gånger för att skjuta konfetti åt olika håll och
 // från olika platser på skärmen
 
+
 const bang = (addConfettiParticles) => {
   // Funktionen addConfettiParticles tar in ett antal parametrar
   // för att styra hur en konfettiexplosion ser ut. Antalet partiklar,
@@ -36,16 +37,63 @@ const bang = (addConfettiParticles) => {
   // (och med vilken hastighet) de flyger, hur mycket partiklarna
   // sprider ut sig från varandra samt ett gruppnamn som skickas in i
   // chooseParticleColor. Ändra på dessa värden och se vad som händer!
+  
+
   addConfettiParticles({
     groupName: getRandomInt(5),  // Valfritt namn på gruppen
-    particleAmount: getRandomInt(11),  // Antal konfettipartiklar
+    particleAmount: getRandomInt(50),  // Antal konfettipartiklar
     xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
     yPosition: getRandomIntWithMinValue(50, 70),      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
     xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
     yVelocity: 2,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
-    xSpread: getRandomInt(90),        // Slumpmässig spridning på partikelns hastighet i sidled
+    xSpread: getRandomInt(200),        // Slumpmässig spridning på partikelns hastighet i sidled
     ySpread: getRandomInt(40)         // Slumpmässig spridning på partikelns hastighet i höjdled
   })
+
+  setTimeout(function(){ addConfettiParticles({
+    groupName: getRandomInt(5),  // Valfritt namn på gruppen
+    particleAmount: getRandomInt(50),  // Antal konfettipartiklar
+    xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
+    yPosition: getRandomIntWithMinValue(50, 70),      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
+    xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
+    yVelocity: 2,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
+    xSpread: getRandomInt(200),        // Slumpmässig spridning på partikelns hastighet i sidled
+    ySpread: getRandomInt(40)         // Slumpmässig spridning på partikelns hastighet i höjdled
+  }) }, 200);
+  
+  setTimeout(function(){ addConfettiParticles({
+    groupName: getRandomInt(5),  // Valfritt namn på gruppen
+    particleAmount: getRandomInt(50),  // Antal konfettipartiklar
+    xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
+    yPosition: getRandomIntWithMinValue(50, 70),      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
+    xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
+    yVelocity: 2,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
+    xSpread: getRandomInt(200),        // Slumpmässig spridning på partikelns hastighet i sidled
+    ySpread: getRandomInt(40)         // Slumpmässig spridning på partikelns hastighet i höjdled
+  }) }, 400);
+
+  setTimeout(function(){ addConfettiParticles({
+    groupName: getRandomInt(5),  // Valfritt namn på gruppen
+    particleAmount: getRandomInt(50),  // Antal konfettipartiklar
+    xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
+    yPosition: getRandomIntWithMinValue(50, 70),      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
+    xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
+    yVelocity: 2,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
+    xSpread: getRandomInt(200),        // Slumpmässig spridning på partikelns hastighet i sidled
+    ySpread: getRandomInt(40)         // Slumpmässig spridning på partikelns hastighet i höjdled
+  }) }, 800);
+
+  setTimeout(function(){ addConfettiParticles({
+    groupName: getRandomInt(5),  // Valfritt namn på gruppen
+    particleAmount: getRandomInt(50),  // Antal konfettipartiklar
+    xPosition: 50,      // Position i procent av skärmens bredd, 0 är längst till vänster och 100 längst till höger
+    yPosition: getRandomIntWithMinValue(50, 70),      // Position i procent av skärmens höjd, 0 är längst ner och 100 högst upp
+    xVelocity: 0,       // Hastighet i sidled, positiva värden åker åt höger och negativa åt vänster
+    yVelocity: 2,       // Hastighet i höjdled, positiva värden åker uppåt och negativa värden nedåt
+    xSpread: getRandomInt(200),        // Slumpmässig spridning på partikelns hastighet i sidled
+    ySpread: getRandomInt(40)         // Slumpmässig spridning på partikelns hastighet i höjdled
+  }) }, 1100);
+  
 }
 
 /* Generate a random numer */
@@ -58,7 +106,6 @@ const getRandomInt = (max) => {
 const getRandomIntWithMinValue = (min, max) => {
   return min + Math.random() * (max - min);
 }
-
 
 // Här exporterar vi funktionerna så att de kan användas i
 // confetti-creator-filen som du inte behöver bry dig om
